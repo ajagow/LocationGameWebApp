@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -6,6 +10,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,6 +20,13 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+    resolve: `gatsby-source-prismic-graphql`,
+      options: {
+        repositoryName: 'smartypill',
+        accessToken: `${process.env.API_KEY}`
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -20,13 +20,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-    resolve: `gatsby-source-prismic-graphql`,
-      options: {
-        repositoryName: 'smartypill',
-        accessToken: `${process.env.API_KEY}`
-      }
-    },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

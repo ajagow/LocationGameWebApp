@@ -1,3 +1,22 @@
 html {
   background-color: lavenderblush;
 }
+
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: bold;
+  src:
+    local('DM Sans'),
+    url(../fonts/DMSans-Bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('DM Sans'),
+    url(../fonts/JetBrainsMono-Regular.woff) format('woff');
+}

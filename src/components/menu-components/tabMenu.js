@@ -2,10 +2,14 @@ import React from 'react';
 import styled from "styled-components";
 
 import { darkBlue, white } from '../base_components/colors';
+import { Terrene_H2 } from '../base_components/typography';
 import { IconSVG } from '../base_components/images';
 import { MenuSliderStyle } from './menuSlide';
 
 import { QuestList } from '../quest-components/QuestList';
+import { TeamList } from '../team-components/TeamList';
+import { ClueList } from '../clue-components/ClueList';
+import { StoryList } from '../story-components/StoryList';
 
 import chapter from '../../../public/icons/chapter.svg';
 import hint from '../../../public/icons/hint.svg';
@@ -27,7 +31,8 @@ const theme = createMuiTheme({
     MuiTabs: {
         flexContainer: {
             justifyContent: 'space-evenly',
-            backgroundColor: `${white}`
+            backgroundColor: `${white}`,
+            borderRadius: '8px 8px 0 0',
         }
     },
     PrivateTabIndicator: {
@@ -42,8 +47,11 @@ const theme = createMuiTheme({
 
 
 export const TabContentStyle = styled.div`
-    width: 100%;
+    margin-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
 `;
+
 
 
 export class TabBar extends React.Component {
@@ -70,17 +78,38 @@ export class TabBar extends React.Component {
 
 export class TabContent extends React.Component {
 
+
+    
+
+
     render() {
-        const { index } = this.props;
+        const { index, quests,  rerenderParentCallback} = this.props;
         return(
             <TabContentStyle>
     <SwipeableViews index={index} onChangeIndex={(index) => this.props.handleChangeIndex(index)}>
-          <div>hint content</div>
-          <div>
-            <QuestList/>
-          </div>
-          <div>team content</div>
-          <div>chapter content</div>
+        <TabContentStyle>
+            <Terrene_H2>Collected Clues</Terrene_H2>
+            <ClueList quests={quests}/>
+
+          </TabContentStyle>
+
+          <TabContentStyle>
+            <Terrene_H2>Mission Log</Terrene_H2>
+            <QuestList quests={quests} rerenderParentCallback={rerenderParentCallback}/>
+          </TabContentStyle>
+          
+          <TabContentStyle>
+            <Terrene_H2>Team Members</Terrene_H2>
+            <TeamList/>
+
+          </TabContentStyle>
+          
+          <TabContentStyle>
+            <Terrene_H2>Story Summary</Terrene_H2>
+            <StoryList/>
+
+          </TabContentStyle>
+
         </SwipeableViews>
         </TabContentStyle>
         );

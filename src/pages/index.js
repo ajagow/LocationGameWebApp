@@ -44,16 +44,16 @@ class IndexPage extends Component {
   }
 
   render() {
-    console.log("available: " + this.props.isGeolocationAvailable);
-    console.log("enabled: " + this.props.isGeolocationEnabled);
-    console.log("coord: " + this.props.coords);
-    if (this.props.coords) {
-      console.log("coord: " + this.props.coords.latitude);
-      console.log("coord: " + this.props.coords.longitude);
-    }
+    // console.log("available: " + this.props.isGeolocationAvailable);
+    // console.log("enabled: " + this.props.isGeolocationEnabled);
+    // console.log("coord: " + this.props.coords);
+    // if (this.props.coords) {
+    //   console.log("coord: " + this.props.coords.latitude);
+    //   console.log("coord: " + this.props.coords.longitude);
+    // }
 
-    const isMatch = isLocationMatch(42.3292356, -71.0854208, 42.3292336, -71.0854208);
-    console.log('dfljklsdfj: ' + isMatch);
+    // const isMatch = isLocationMatch(42.3292356, -71.0854208, 42.3292336, -71.0854208);
+    // console.log('dfljklsdfj: ' + isMatch);
 
     return (
       <div>
@@ -61,6 +61,7 @@ class IndexPage extends Component {
         <TopBar/>
 
         <MenuSlide/>
+        {/* <MapContainer lat={42.3287342} long={-71.0854208}/> */}
         {/* {this.props.coords && 
           <MapContainer lat={this.props.coords.latitude} long={this.props.coords.longitude}/>
           } */}

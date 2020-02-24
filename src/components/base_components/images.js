@@ -8,6 +8,19 @@ export const IconSVGStyle = styled.img`
     margin-bottom: 0px;
 `;
 
+const ClueImageStyle = styled.img`
+  margin-top: 20px;
+`;
+
+export class ClueImage extends React.Component {
+  render() {
+    const { src } = this.props;
+    return (
+        <ClueImageStyle src={src} alt="Logo" />
+    )
+  }
+}
+
 export class IconSVG extends React.Component {
   render() {
     const { src } = this.props;

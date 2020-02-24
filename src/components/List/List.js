@@ -1,23 +1,25 @@
 import styled from "styled-components";
 import React from 'react';
 
+import { darkBlue, cream } from '../base_components/colors';
 
-export const ListStyle = styled.a`
-    width: 100px;
-    height: 50px;
-    border: 1px solid black;
+
+export const ListStyle = styled.div`
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    background: ${darkBlue};
+    color: ${cream};
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 12px;
 
 `;
 
-
-export class List extends React.Component {
-  render() {
-    const { title } = this.props;
-    return (
-        <PrimaryButtonStyle onClick={() => this.props.onClickFnc()}>{title}</PrimaryButtonStyle>
-    )
-  }
-}
+export const ListTextContainerStyle = styled.div`
+    position: absolute;
+    bottom: 0;  
+`;
 
 
 

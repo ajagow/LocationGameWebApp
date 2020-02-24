@@ -33,16 +33,54 @@ export const MenuSliderStyle = styled.div`
     width: 50px;
 `;
 
+
  
 export class MenuSlide extends React.Component {
   state = {
-    index: 0
+    index: 0,
+    quests: [],
+    attempts: []
   }
+
+  componentDidMount() {
+        this.fetchQuests();
+        this.fetchAttempts();
+    }
+
+  fetchQuests() {
+          fetch(`${process.env.TERRENE_API}/quests`)
+        .then(res => res.json())
+        .then((data) => {
+            this.setState({ quests: data });
+        })
+        .catch(console.log)
+  }
+
+    fetchAttempts() {
+          fetch(`${process.env.TERRENE_API}/attempts`)
+        .then(res => res.json())
+        .then((data) => {
+            this.setState({ attempts: data });
+        })
+        .catch(console.log)
+  }
+
+
+
+    rerenderParentCallback = () => {
+        // time out because we have to wait for quest to be logged
+        setTimeout(() => {
+                this.fetchQuests();
+        }, 1000);
+
+    }
 
   handleChange = (event, value) => {
     this.setState({
       index: value,
     });
+    this.fetchQuests();
+    this.fetchAttempts();
   };
 
   handleChangeIndex = index => {
@@ -50,6 +88,8 @@ export class MenuSlide extends React.Component {
     this.setState({
       index: index
     });
+    this.fetchQuests();
+    this.fetchAttempts();
   };
  
 
@@ -75,7 +115,7 @@ export class MenuSlide extends React.Component {
           <TabBar index={this.state.index} handleIndexChange={this.handleChange}/>
           <MenuContent>
     
-          <TabContent index={this.state.index} handleChangeIndex={this.handleChangeIndex}/>
+          <TabContent rerenderParentCallback={this.rerenderParentCallback} quests={this.state.quests} index={this.state.index} handleChangeIndex={this.handleChangeIndex}/>
           </MenuContent>
         </div>
       </Draggable>

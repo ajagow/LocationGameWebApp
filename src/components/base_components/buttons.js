@@ -1,11 +1,17 @@
 import styled from "styled-components";
 import React from 'react';
+import { red, darkBlue } from "./colors";
 
-
-export const PrimaryButtonStyle = styled.a`
+export const PrimaryButtonStyle = styled.span`
     width: 100px;
     height: 50px;
-    border: 1px solid black;
+    border: 1px solid ${red};
+    color: ${red};
+    padding: 8px;
+    border-radius: 8px;
+      font-family: 'DM Sans';
+  font-weight: bold;
+  font-size: 18px;
 
 `;
 
@@ -18,7 +24,5 @@ export class PrimaryButton extends React.Component {
     )
   }
 }
-
-
 
 

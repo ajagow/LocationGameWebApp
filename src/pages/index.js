@@ -61,7 +61,7 @@ class IndexPage extends Component {
         <TopBar/>
 
         <MenuSlide/>
-        {/* <MapContainer lat={42.3287342} long={-71.0854208}/> */}
+        <MapContainer lat={42.3287342} long={-71.0854208}/>
         {/* {this.props.coords && 
           <MapContainer lat={this.props.coords.latitude} long={this.props.coords.longitude}/>
           } */}

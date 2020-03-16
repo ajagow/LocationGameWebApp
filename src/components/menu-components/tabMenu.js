@@ -77,13 +77,13 @@ export class TabBar extends React.Component {
 }
 
 export class TabContent extends React.Component {
-
-
     
-
+    constructor(props) {
+    super(props);
+    }
 
     render() {
-        const { index, quests,  rerenderParentCallback} = this.props;
+        const { index, quests, rerenderParentCallback} = this.props;
         return(
             <TabContentStyle>
     <SwipeableViews index={index} onChangeIndex={(index) => this.props.handleChangeIndex(index)}>
@@ -106,7 +106,7 @@ export class TabContent extends React.Component {
           
           <TabContentStyle>
             <Terrene_H2>Story Summary</Terrene_H2>
-            <StoryList/>
+            <StoryList trigger={this.props.trigger} setStory={this.props.setStory} />
 
           </TabContentStyle>
 

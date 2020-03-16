@@ -12,7 +12,9 @@ export const PrimaryButtonStyle = styled.span`
       font-family: 'DM Sans';
   font-weight: bold;
   font-size: 18px;
-
+  -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
 `;
 
 

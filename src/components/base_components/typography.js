@@ -32,4 +32,10 @@ export const Terrene_H4 = styled.h4`
   line-height: 9px;
 `;
 
-export const Terrene_H5 = styled.h5``
+export const Terrene_H5 = styled.h5`
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 54px;
+  line-height: 115%;
+`;

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link, graphql } from "gatsby";
 
+import { Redirect } from '@reach/router';
+
+
 import Layout from "../components/layout";
 import Image from "../components/image";
 import SEO from "../components/seo";
@@ -16,6 +19,7 @@ import { PrimaryButton } from "../components/base_components/buttons";
 import { MenuSlide } from "../components/menu-components/menuSlide";
 
 import { isLocationMatch } from "../utils/locationChecker";
+import { getCookie } from "../utils/cookieUtils";
 
 class IndexPage extends Component {
 
@@ -55,6 +59,18 @@ class IndexPage extends Component {
     // const isMatch = isLocationMatch(42.3292356, -71.0854208, 42.3292336, -71.0854208);
     // console.log('dfljklsdfj: ' + isMatch);
 
+    document.cookie = "visit=false";
+
+    const isVisited = getCookie("visit");
+
+    if(isVisited === "" || isVisited === "false") {
+      window.location.replace(`/page-2`)
+    }
+
+    else {
+
+    
+
     return (
       <div>
         <SEO title="Home" />
@@ -77,6 +93,7 @@ class IndexPage extends Component {
         <Link to="/page-2/">Go to page 2</Link> */}
       </div>
     );
+    }
   }
 }
 

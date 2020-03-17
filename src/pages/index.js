@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Link, graphql } from "gatsby";
 
-import { Redirect } from '@reach/router';
-
+import { Redirect } from "@reach/router";
 
 import Layout from "../components/layout";
 import Image from "../components/image";
@@ -11,8 +10,7 @@ import { geolocated } from "react-geolocated";
 
 import MapContainer from "../components/MapContainer";
 
-import { TopBar } from "../components/top_bar/topBar";
-
+import TopBar from "../components/top_bar/topBar";
 
 import { Terrene_H1 } from "../components/base_components/typography";
 import { PrimaryButton } from "../components/base_components/buttons";
@@ -22,29 +20,22 @@ import { isLocationMatch } from "../utils/locationChecker";
 import { getCookie } from "../utils/cookieUtils";
 
 class IndexPage extends Component {
-
   constructor(props) {
     super(props);
     this.onClickButton = this.onClickButton.bind(this);
   }
 
   onClickButton() {
-
     if (this.props.coords) {
       const lat = this.props.coords.latitude;
       const long = this.props.coords.longitude;
       const isMatch = isLocationMatch(lat, long, 42.3292336, -71.0854208);
 
-      const message = isMatch ? 'Your location is a match!' : 'Try again lol';
-      alert('hello!! ' + message);
+      const message = isMatch ? "Your location is a match!" : "Try again lol";
+      alert("hello!! " + message);
+    } else {
+      alert("No location available");
     }
-
-    else {
-      alert('No location available');
-    }
-
-
-
   }
 
   render() {
@@ -59,29 +50,22 @@ class IndexPage extends Component {
     // const isMatch = isLocationMatch(42.3292356, -71.0854208, 42.3292336, -71.0854208);
     // console.log('dfljklsdfj: ' + isMatch);
 
-    document.cookie = "visit=false";
-
     const isVisited = getCookie("visit");
 
-    if(isVisited === "" || isVisited === "false") {
-      window.location.replace(`/page-2`)
-    }
+    if (isVisited === "" || isVisited === "false") {
+      window.location.replace(`/page-2`);
+    } else {
+      return (
+        <div>
+          <SEO title="Home" />
+          <TopBar showLogout={true} />
 
-    else {
-
-    
-
-    return (
-      <div>
-        <SEO title="Home" />
-        <TopBar/>
-
-        <MenuSlide/>
-        <MapContainer lat={42.3287342} long={-71.0854208}/>
-        {/* {this.props.coords && 
+          <MenuSlide />
+          <MapContainer lat={42.3287342} long={-71.0854208} />
+          {/* {this.props.coords && 
           <MapContainer lat={this.props.coords.latitude} long={this.props.coords.longitude}/>
           } */}
-        {/* {this.props.coords && <h1>{this.props.coords.latitude}</h1>}
+          {/* {this.props.coords && <h1>{this.props.coords.latitude}</h1>}
 
         {this.props.coords && <h1>{this.props.coords.longitude}</h1>}
         <PrimaryButton type="primary" onClickFnc={this.onClickButton} title={"hello"}/>
@@ -91,8 +75,8 @@ class IndexPage extends Component {
  
         </div>
         <Link to="/page-2/">Go to page 2</Link> */}
-      </div>
-    );
+        </div>
+      );
     }
   }
 }

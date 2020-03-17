@@ -32,4 +32,12 @@ export const Terrene_H4 = styled.h4`
   line-height: 9px;
 `;
 
+export const Terrene_P = styled.p`
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+`;
+
 export const Terrene_H5 = styled.h5``

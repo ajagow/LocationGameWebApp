@@ -28,6 +28,7 @@
     "react-draggable": "^4.2.0",
     "react-geolocated": "^3.0.1",
     "react-helmet": "^5.2.1",
+    "react-morphing-modal": "^0.2.2",
     "react-swipeable-views": "^0.13.9",
     "styled-components": "^5.0.1"
   },

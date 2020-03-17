@@ -1,126 +1,73 @@
 import styled from "styled-components";
-import React from 'react';
+import React from "react";
+import { useRef } from "react";
 
-import SwipeableViews from 'react-swipeable-views';
+import SwipeableViews from "react-swipeable-views";
 
-import { Terrene_H1, Terrene_H2, Terrene_H3 } from "../base_components/typography";
+import {
+  Terrene_H1,
+  Terrene_H2,
+  Terrene_H3,
+} from "../base_components/typography";
 import { ListStyle, ListTextContainerStyle } from "../List/List.js";
 
-import back from '../../../public/icons/back.svg';
-import { IconSVG } from '../base_components/images';
+import back from "../../../public/icons/back.svg";
+import { IconSVG } from "../base_components/images";
 
 import { story } from "./StoryContent";
 import { darkBlue, cream } from "../base_components/colors";
+import { StoryCarousel } from "./StoryCarousel";
 
-
-const chapters = [
-  {id: 1, title: "Prologue", clue: "clues/quest1.png"},
-  {id: 2, title: "Chapter 1: The Pivot", clue: ""}
-];
-
-const BackButton = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-  position: absolute;
-  background: white;
-    top: 40px;
-    width: 100vw;
-`;
-
-const StoryContentStyle = styled.div`
-  margin-top: 25px;
-  padding: 8px;
-  background: ${darkBlue};
-  color: ${cream};
-`;
-
+import { useModal, Modal } from "react-morphing-modal";
+import "react-morphing-modal/dist/ReactMorphingModal.css";
 
 export const QuestDetailContainerStyle = styled.div`
-    overflow: scroll;
-    height: 450px;
+  overflow: scroll;
+  height: 450px;
 `;
 
 const TeamCharacterStyle = styled(ListTextContainerStyle)`
   color: tomato;
 `;
 
+export const StoryList = props => {
+  const { trigger, setStory } = props;
 
+  const ChapterList = () => {
+    const ListItem = props => {
+      const { title, getTriggerProps, id } = props;
+      const btnRef = useRef(null);
 
-const Chapter = ({id, toggle}) => {
-  const listItems = story[id].story.map((storyPart) =>
-    <Terrene_H3>{storyPart}</Terrene_H3>
-  );
- return (
-   <div>
-      <BackButton>
-        <IconSVG src={back} alt="Logo" /> 
-        <Terrene_H3 onClick={() => toggle(0)} style={{margin: 0}}>back to chapters</Terrene_H3>
-      </BackButton>
-      <StoryContentStyle>
-        <Terrene_H3>{chapters[id].title} </Terrene_H3>
-         {listItems}
-      </StoryContentStyle>
+      const openStory = id => {
+        setStory(id);
+        getTriggerProps(btnRef);
+      };
 
-   </div>
- )
-}
-
-export class StoryList extends React.Component {
-  state = {
-    showList: true,
-    listItem: 0
-  }
-
-  toggleShowList = (itemId) => {
-
-    this.setState((prevState, props) => ({
-      showList: !prevState.showList,
-      listItem: itemId
-    }));
-  };
-
-
-  createList(){
+      return (
+        <ListStyle ref={btnRef} onClick={() => openStory(id)}>
+          <ListTextContainerStyle>
+            <Terrene_H3>{title}</Terrene_H3>
+          </ListTextContainerStyle>
+        </ListStyle>
+      );
+    };
 
     var ans = [];
 
-    for (let i = 0; i < chapters.length; i++) { 
-      const listItem =   <ListStyle onClick={() => this.toggleShowList(i)} >
-      <ListTextContainerStyle>
-      <Terrene_H3>{chapters[i].title}</Terrene_H3>
-      </ListTextContainerStyle>
-      
-    </ListStyle>;
+    for (let i = 0; i < story.length; i++) {
+      const listItem = (
+        <ListItem title={story[i].title} getTriggerProps={trigger} id={i} />
+      );
 
-    ans.push(listItem);
-
-
+      ans.push(listItem);
     }
 
-    return ans;
-
-
-  }
-
-
-  render() {
-
+    return <div>{ans}</div>;
+  };
 
   return (
     <QuestDetailContainerStyle>
-    { this.state.showList && this.createList()}
-
-    { !this.state.showList && <Chapter id={this.state.listItem} toggle={this.toggleShowList}/>}
- 
+      <ChapterList />
     </QuestDetailContainerStyle>
-
-
   );
-
-  }
-}
-
-
-
-
+};

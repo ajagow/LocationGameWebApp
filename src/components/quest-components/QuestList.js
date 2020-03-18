@@ -94,6 +94,7 @@ export class QuestDetail extends React.Component {
             onClick={() => {
               this.props.toggle(0);
               this.props.rerenderParentCallback();
+              this.props.rerenderAttemptsCallback();
             }}
             style={{ margin: 0 }}
           >
@@ -106,6 +107,7 @@ export class QuestDetail extends React.Component {
           <LocationButton
             id={id}
             rerenderParentCallback={this.props.rerenderParentCallback}
+            rerenderAttemptsCallback={this.props.rerenderAttemptsCallback}
           />
 
           <ClueImage src={quests[parseInt(id - 1)].clue} />
@@ -169,7 +171,6 @@ export class QuestList extends React.Component {
   };
 
   render() {
-
     return (
       <QuestDetailContainerStyle>
         <Attempts attempts={this.props.attempts} update={this.state.update} />
@@ -185,6 +186,7 @@ export class QuestList extends React.Component {
           <QuestDetail
             toggle={this.toggleShowList}
             id={this.state.listItem}
+            rerenderAttemptsCallback={this.props.rerenderAttemptsCallback}
             rerenderParentCallback={this.props.rerenderParentCallback}
           />
         )}

@@ -79,7 +79,7 @@ export class TabContent extends React.Component {
   }
 
   render() {
-    const { index, quests, rerenderParentCallback, attempts } = this.props;
+    const { index, quests, rerenderParentCallback, rerenderAttemptsCallback, attempts } = this.props;
     return (
       <TabContentStyle>
         <SwipeableViews
@@ -96,6 +96,7 @@ export class TabContent extends React.Component {
             <QuestList
               quests={quests}
               attempts={attempts}
+              rerenderAttemptsCallback={rerenderAttemptsCallback}
               rerenderParentCallback={rerenderParentCallback}
             />
           </TabContentStyle>

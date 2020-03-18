@@ -73,6 +73,13 @@ export class MenuSlide extends React.Component {
     }, 1000);
   };
 
+  rerenderAttemptsCallback = () => {
+    // time out because we have to wait for quest to be logged
+    setTimeout(() => {
+      this.fetchAttempts();
+    }, 1000);
+  };
+
   handleChange = (event, value) => {
     this.setState({
       index: value,
@@ -120,6 +127,7 @@ export class MenuSlide extends React.Component {
                 setStory={this.props.setStory}
                 attempts={this.state.attempts}
                 rerenderParentCallback={this.rerenderParentCallback}
+                rerenderAttemptsCallback={this.rerenderAttemptsCallback}
                 quests={this.state.quests}
                 index={this.state.index}
                 handleChangeIndex={this.handleChangeIndex}

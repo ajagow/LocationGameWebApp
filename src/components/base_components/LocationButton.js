@@ -8,44 +8,42 @@ import { PrimaryButton } from "./buttons";
 import { isLocationMatch } from "../../utils/locationChecker";
 
 class LocationButton extends Component {
-
   constructor(props) {
     super(props);
     this.onClickButton = this.onClickButton.bind(this);
   }
 
   logAttempt() {
-        fetch(`${process.env.TERRENE_API}/attempts/1/2`)
-        .then(res => res.json())
-        .then((data) => {
-            this.setState({ quests: data });
-        })
-        .catch(console.log)
+    fetch(`${process.env.TERRENE_API}/attempts/1/2`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ quests: data });
+      })
+      .catch(console.log);
   }
 
   logSuccess() {
-        const { id } = this.props;
-        fetch(`${process.env.TERRENE_API}/quests/1/` + id)
-        .then(res => res.json())
-        .then((data) => {
-            this.setState({ quests: data });
-        })
-        .catch(console.log)
+    const { id } = this.props;
+    fetch(`${process.env.TERRENE_API}/quests/1/` + id)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({ quests: data });
+      })
+      .catch(console.log);
   }
 
   onClickButton() {
-
-        //   if(!isMatch) {
-          if(this.props.id === 1) {
-            this.logAttempt();
-            this.props.rerenderParentCallback(false);
-            alert('Failure. Keep on trying!');
-          }
-          else {
-            this.props.rerenderParentCallback(true);
-            this.logSuccess();
-            alert('Success! Go to the clue menu to see the clue you unlocked!');
-          }
+    //   if(!isMatch) {
+    if (this.props.id === 1) {
+      this.logAttempt();
+      this.props.rerenderAttemptsCallback();
+      this.props.rerenderParentCallback(false);
+      alert("Failure. Keep on trying!");
+    } else {
+      this.props.rerenderParentCallback(true);
+      this.logSuccess();
+      alert("Success! Go to the clue menu to see the clue you unlocked!");
+    }
 
     //   }
 
@@ -66,9 +64,6 @@ class LocationButton extends Component {
     // else {
     //   alert('No location available');
     // }
-
-
-
   }
   render() {
     console.log("available: " + this.props.isGeolocationAvailable);
@@ -79,12 +74,20 @@ class LocationButton extends Component {
       console.log("coord: " + this.props.coords.longitude);
     }
 
-    const isMatch = isLocationMatch(42.3292356, -71.0854208, 42.3292336, -71.0854208);
-    console.log('dfljklsdfj: ' + isMatch);
+    const isMatch = isLocationMatch(
+      42.3292356,
+      -71.0854208,
+      42.3292336,
+      -71.0854208
+    );
+    console.log("dfljklsdfj: " + isMatch);
 
     return (
-        <PrimaryButton type="primary" onClickFnc={this.onClickButton} title={"Guess Location"}/>
-
+      <PrimaryButton
+        type="primary"
+        onClickFnc={this.onClickButton}
+        title={"Guess Location"}
+      />
     );
   }
 }

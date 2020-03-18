@@ -55,6 +55,7 @@ const T_H5 = styled(Terrene_H5)`
 
 const Background = styled.div`
   background-color: ${darkBlue};
+  min-height: 100vh;
 `;
 
 const FormContainer = styled.div`

@@ -68,9 +68,26 @@ const IndexPage = props => {
       <MenuSlide open={open} setStory={setStory} />
       <MapContainer lat={42.3287342} long={-71.0854208} />
       {/* {this.props.coords && 
+  const isVisited = getCookie("visit");
+  if (isVisited === "" || isVisited === "false") {
+    window.location.replace(`/page-2`);
+  } else {
+    return (
+      <div>
+        <SEO title="Home" />
+        <Modal {...modalProps} padding={false}>
+          <StoryCarousel
+            story={story[storyId].story}
+            title={story[storyId].title}
+          />
+        </Modal>
+        <TopBar showLogout={true} />
+        <MenuSlide trigger={open} setStory={setStory} />
+        <MapContainer lat={42.3287342} long={-71.0854208} />
+        {/* {this.props.coords && 
           <MapContainer lat={this.props.coords.latitude} long={this.props.coords.longitude}/>
           } */}
-      {/* {this.props.coords && <h1>{this.props.coords.latitude}</h1>}
+        {/* {this.props.coords && <h1>{this.props.coords.latitude}</h1>}
 
         {this.props.coords && <h1>{this.props.coords.longitude}</h1>}
         <PrimaryButton type="primary" onClickFnc={this.onClickButton} title={"hello"}/>
@@ -80,8 +97,8 @@ const IndexPage = props => {
  
         </div>
         <Link to="/page-2/">Go to page 2</Link> */}
-    </div>
-  );
+      </div>
+    );
 };
 
 export default geolocated({

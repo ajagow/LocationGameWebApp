@@ -118,6 +118,7 @@ export class MenuSlide extends React.Component {
               <TabContent
                 trigger={this.props.trigger}
                 setStory={this.props.setStory}
+                attempts={this.state.attempts}
                 rerenderParentCallback={this.rerenderParentCallback}
                 quests={this.state.quests}
                 index={this.state.index}

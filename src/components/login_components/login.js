@@ -16,7 +16,7 @@ export const TopBarStyle = styled.div`
     color: ${mediumBlue};
     background-color: ${darkBlue};
     z-index: 1;
-}`;
+`;
 
 const WordmarkStyle = styled.img`
     margin: 0;

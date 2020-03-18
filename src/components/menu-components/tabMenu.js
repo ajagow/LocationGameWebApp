@@ -79,7 +79,13 @@ export class TabContent extends React.Component {
   }
 
   render() {
-    const { index, quests, rerenderParentCallback, rerenderAttemptsCallback, attempts } = this.props;
+    const {
+      index,
+      quests,
+      rerenderParentCallback,
+      rerenderAttemptsCallback,
+      attempts,
+    } = this.props;
     return (
       <TabContentStyle>
         <SwipeableViews
@@ -111,7 +117,12 @@ export class TabContent extends React.Component {
 
           <TabContentStyle>
             <Terrene_H2>Story Summary</Terrene_H2>
-            <StoryList open={this.props.open} setStory={this.props.setStory} />
+            <StoryList
+              open={this.props.open}
+              setStory={this.props.setStory}
+              quests={quests}
+              attempts={this.props.attempts}
+            />
           </TabContentStyle>
         </SwipeableViews>
       </TabContentStyle>

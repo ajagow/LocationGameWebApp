@@ -47,8 +47,12 @@ const LocationButton = props => {
       }
     } else {
       props.rerenderParentCallback(true);
-      logSuccess();
       alert("Success! Go to the clue menu to see the clue you unlocked!");
+      if (props.quests.length <= 7) {
+        props.setStory(1);
+        props.open(btnRef);
+      }
+      logSuccess();
     }
 
     //   }

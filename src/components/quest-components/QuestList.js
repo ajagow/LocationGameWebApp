@@ -115,6 +115,7 @@ export class QuestDetail extends React.Component {
             open={this.props.open}
             setStory={this.props.setStory}
             attempts={this.props.attempts}
+            quests={this.props.quests}
             rerenderAttemptsCallback={this.props.rerenderAttemptsCallback}
           />
 
@@ -202,6 +203,7 @@ export class QuestList extends React.Component {
             open={this.props.open}
             setStory={this.props.setStory}
             attempts={this.props.attempts}
+            quests={this.props.quests}
             rerenderAttemptsCallback={this.props.rerenderAttemptsCallback}
           />
         )}

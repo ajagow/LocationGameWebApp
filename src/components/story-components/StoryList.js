@@ -31,7 +31,7 @@ const TeamCharacterStyle = styled(ListTextContainerStyle)`
 `;
 
 export const StoryList = props => {
-  const { open, setStory } = props;
+  const { open, setStory, quests, attempts } = props;
 
   const ChapterList = () => {
     const ListItem = props => {
@@ -52,17 +52,22 @@ export const StoryList = props => {
       );
     };
 
-    var ans = [];
+    // var ans = [];
 
-    for (let i = 0; i < story.length; i++) {
-      const listItem = (
-        <ListItem title={story[i].title} open={open} id={i} />
-      );
+    // for (let i = 0; i < story.length; i++) {
+    //   const listItem = (
+    //     <ListItem title={story[i].title} open={open} id={i} />
+    //   );
 
-      ans.push(listItem);
-    }
+    //   ans.push(listItem);
+    // }
 
-    return <div>{ans}</div>;
+    return (
+      <>
+        <ListItem title={story[0].title} open={open} id={0} />
+        {quests.length === 8 || attempts.length > 2 ? <ListItem title={story[1].title} open={open} id={1} /> : null}
+      </>
+    );
   };
 
   return (

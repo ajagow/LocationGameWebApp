@@ -31,16 +31,16 @@ const TeamCharacterStyle = styled(ListTextContainerStyle)`
 `;
 
 export const StoryList = props => {
-  const { trigger, setStory } = props;
+  const { open, setStory } = props;
 
   const ChapterList = () => {
     const ListItem = props => {
-      const { title, getTriggerProps, id } = props;
+      const { title, open, id } = props;
       const btnRef = useRef(null);
 
       const openStory = id => {
         setStory(id);
-        getTriggerProps(btnRef);
+        open(btnRef);
       };
 
       return (
@@ -56,7 +56,7 @@ export const StoryList = props => {
 
     for (let i = 0; i < story.length; i++) {
       const listItem = (
-        <ListItem title={story[i].title} getTriggerProps={trigger} id={i} />
+        <ListItem title={story[i].title} open={open} id={i} />
       );
 
       ans.push(listItem);

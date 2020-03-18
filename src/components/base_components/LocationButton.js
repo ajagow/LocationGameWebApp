@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useRef } from "react";
 
 import { geolocated } from "react-geolocated";
 
@@ -7,43 +7,50 @@ import { PrimaryButton } from "./buttons";
 
 import { isLocationMatch } from "../../utils/locationChecker";
 
-class LocationButton extends Component {
+const LocationButton = (props) => {
 
-  constructor(props) {
-    super(props);
-    this.onClickButton = this.onClickButton.bind(this);
-  }
+  const [quests, setQuests] = useState({});
 
-  logAttempt() {
+  const btnRef = useRef(null);
+
+  const logAttempt = () => {
         fetch(`${process.env.TERRENE_API}/attempts/1/2`)
         .then(res => res.json())
         .then((data) => {
-            this.setState({ quests: data });
+            setQuests(data);
         })
         .catch(console.log)
   }
 
-  logSuccess() {
-        const { id } = this.props;
+  const logSuccess = () => {
+        const { id } = props;
         fetch(`${process.env.TERRENE_API}/quests/1/` + id)
         .then(res => res.json())
         .then((data) => {
-            this.setState({ quests: data });
+          setQuests(data);
         })
         .catch(console.log)
   }
 
-  onClickButton() {
+  const onClickButton = () => {
 
         //   if(!isMatch) {
-          if(this.props.id === 1) {
-            this.logAttempt();
-            this.props.rerenderParentCallback(false);
+          if(props.id === 1) {
+            if (props.attempts.length < 2) {
+              console.log(props.attempts.length)
+            logAttempt();
+            props.rerenderParentCallback(false);
             alert('Failure. Keep on trying!');
+            }
+            else {
+              alert('Failure. Your attempts are up!');
+            props.setStory(0);
+            props.open(btnRef);
+            }
           }
           else {
-            this.props.rerenderParentCallback(true);
-            this.logSuccess();
+            props.rerenderParentCallback(true);
+            logSuccess();
             alert('Success! Go to the clue menu to see the clue you unlocked!');
           }
 
@@ -67,26 +74,23 @@ class LocationButton extends Component {
     //   alert('No location available');
     // }
 
-
-
   }
-  render() {
-    console.log("available: " + this.props.isGeolocationAvailable);
-    console.log("enabled: " + this.props.isGeolocationEnabled);
-    console.log("coord: " + this.props.coords);
-    if (this.props.coords) {
-      console.log("coord: " + this.props.coords.latitude);
-      console.log("coord: " + this.props.coords.longitude);
+
+    console.log("available: " + props.isGeolocationAvailable);
+    console.log("enabled: " + props.isGeolocationEnabled);
+    console.log("coord: " + props.coords);
+    if (props.coords) {
+      console.log("coord: " + props.coords.latitude);
+      console.log("coord: " + props.coords.longitude);
     }
 
     const isMatch = isLocationMatch(42.3292356, -71.0854208, 42.3292336, -71.0854208);
     console.log('dfljklsdfj: ' + isMatch);
 
     return (
-        <PrimaryButton type="primary" onClickFnc={this.onClickButton} title={"Guess Location"}/>
+        <PrimaryButton openModalRef={btnRef} type="primary" onClickFnc={onClickButton} title={"Guess Location"}/>
 
     );
-  }
 }
 
 export default geolocated({

@@ -14,6 +14,7 @@ import TopBar from "../components/top_bar/topBar";
 
 import { Terrene_H1 } from "../components/base_components/typography";
 import { PrimaryButton } from "../components/base_components/buttons";
+import { darkBlue } from "../components/base_components/colors"
 import { MenuSlide } from "../components/menu-components/menuSlide";
 import { useModal, Modal } from "react-morphing-modal";
 import "react-morphing-modal/dist/ReactMorphingModal.css";
@@ -24,7 +25,9 @@ import { isLocationMatch } from "../utils/locationChecker";
 import { getCookie } from "../utils/cookieUtils";
 
 const IndexPage = props => {
-  const { open, modalProps } = useModal();
+  const { open, modalProps } = useModal({
+    background: darkBlue,
+  });
 
   const [storyId, setStoryId] = useState(0);
 
@@ -62,7 +65,7 @@ const IndexPage = props => {
         />
       </Modal>
       <TopBar />
-      <MenuSlide trigger={open} setStory={setStory} />
+      <MenuSlide open={open} setStory={setStory} />
       <MapContainer lat={42.3287342} long={-71.0854208} />
       {/* {this.props.coords && 
           <MapContainer lat={this.props.coords.latitude} long={this.props.coords.longitude}/>

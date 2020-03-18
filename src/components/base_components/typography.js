@@ -38,9 +38,6 @@ export const Terrene_P = styled.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
-  font-weight: bold;
-  font-size: 54px;
-  line-height: 115%;
 `;
 
 export const Terrene_H5 = styled.h5``;

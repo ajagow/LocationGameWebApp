@@ -20,9 +20,9 @@ export const PrimaryButtonStyle = styled.span`
 
 export class PrimaryButton extends React.Component {
   render() {
-    const { title } = this.props;
+    const { title, openModalRef } = this.props;
     return (
-        <PrimaryButtonStyle onClick={() => this.props.onClickFnc()}>{title}</PrimaryButtonStyle>
+        <PrimaryButtonStyle ref={openModalRef} onClick={() => this.props.onClickFnc()}>{title}</PrimaryButtonStyle>
     )
   }
 }

@@ -63,7 +63,7 @@ export const StoryCarousel = props => {
     <StoryCarouselWrapper>
       <ChapterTitle>{title}</ChapterTitle>
       <StoryImageWrapper>
-        <StoryImage src={slideContent ? Square : ""} />
+        <StoryImage src={slideContent && slideContent.image !== '' ? `storyImages/${slideContent.image}` : Square} />
       </StoryImageWrapper>
       <StoryContent>
         <Terrene_P>{slideContent ? slideContent.text : ""}</Terrene_P>

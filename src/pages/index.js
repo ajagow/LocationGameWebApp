@@ -14,7 +14,7 @@ import TopBar from "../components/top_bar/topBar";
 
 import { Terrene_H1 } from "../components/base_components/typography";
 import { PrimaryButton } from "../components/base_components/buttons";
-import { darkBlue } from "../components/base_components/colors"
+import { darkBlue } from "../components/base_components/colors";
 import { MenuSlide } from "../components/menu-components/menuSlide";
 import { useModal, Modal } from "react-morphing-modal";
 import "react-morphing-modal/dist/ReactMorphingModal.css";
@@ -55,19 +55,6 @@ const IndexPage = props => {
     console.log(`setting story id to ${id}`);
   };
 
-  return (
-    <div>
-      <SEO title="Home" />
-      <Modal {...modalProps} padding={false}>
-        <StoryCarousel
-          story={story[storyId].story}
-          title={story[storyId].title}
-        />
-      </Modal>
-      <TopBar />
-      <MenuSlide open={open} setStory={setStory} />
-      <MapContainer lat={42.3287342} long={-71.0854208} />
-      {/* {this.props.coords && 
   const isVisited = getCookie("visit");
   if (isVisited === "" || isVisited === "false") {
     window.location.replace(`/page-2`);
@@ -82,23 +69,11 @@ const IndexPage = props => {
           />
         </Modal>
         <TopBar showLogout={true} />
-        <MenuSlide trigger={open} setStory={setStory} />
+        <MenuSlide open={open} setStory={setStory} />
         <MapContainer lat={42.3287342} long={-71.0854208} />
-        {/* {this.props.coords && 
-          <MapContainer lat={this.props.coords.latitude} long={this.props.coords.longitude}/>
-          } */}
-        {/* {this.props.coords && <h1>{this.props.coords.latitude}</h1>}
-
-        {this.props.coords && <h1>{this.props.coords.longitude}</h1>}
-        <PrimaryButton type="primary" onClickFnc={this.onClickButton} title={"hello"}/>
-        <p>Welcome to your new Gatsby site.</p>
-        <p>Now go build something great. {isMatch}</p>
-        <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
- 
-        </div>
-        <Link to="/page-2/">Go to page 2</Link> */}
       </div>
     );
+  }
 };
 
 export default geolocated({

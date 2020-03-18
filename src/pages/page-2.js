@@ -127,9 +127,9 @@ const SecondPage = () => {
         <StartButton onClick={() => logUser(name, playerNum)}>
           <T_H2>Start</T_H2>
         </StartButton>
-        <BackButton>
+        {/* <BackButton>
           <T_H2>Go back</T_H2>
-        </BackButton>
+        </BackButton> */}
       </ButtonContaiiner>
 
       {/* <Link to="/">Go back to the homepage</Link> */}

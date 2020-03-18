@@ -42,7 +42,7 @@ const LocationButton = props => {
         alert("Failure. Keep on trying!");
       } else {
         alert("Failure. Your attempts are up!");
-        props.setStory(0);
+        props.setStory(1);
         props.open(btnRef);
       }
     } else {

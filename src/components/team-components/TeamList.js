@@ -9,7 +9,7 @@ import { ListStyle, ListTextContainerStyle } from "../List/List.js";
 import { mediumBlue } from "../base_components/colors";
 
 
-const teamMembers = [
+export const teamMembers = [
   {id: 1, name: "Ian Anderson", clue: "clues/quest1.png"},
   {id: 2, name: "Noelle Wong", clue: "clues/quest2.png"},
   {id: 3, name: "Joe Wang", clue: "clues/quest3.png"},

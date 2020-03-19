@@ -23,9 +23,9 @@ export class ClueImage extends React.Component {
 
 export class IconSVG extends React.Component {
   render() {
-    const { src } = this.props;
+    const { src, alt } = this.props;
     return (
-        <IconSVGStyle src={src} alt="Logo" />
+        <IconSVGStyle src={src} alt={alt} />
     )
   }
 }

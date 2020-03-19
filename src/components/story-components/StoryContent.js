@@ -182,11 +182,11 @@ export const story = [
   },
   {
     id: 2,
-    title: "Decision",
+    title: "Deliberation",
     clue: "",
     story: [
       {
-        text: "decision text",
+        text: "Deliberation text",
         image: "",
       },
     ],

@@ -32,8 +32,9 @@ const LocationButton = props => {
   };
 
   const onClickButton = () => {
-    //   if(!isMatch) {
-    if (props.id === 1) {
+
+
+    if (!isLocationMatch(props.id, props.guess)) {
       if (props.attempts.length < 2) {
         console.log(props.attempts.length);
         logAttempt();
@@ -42,6 +43,11 @@ const LocationButton = props => {
         alert("Failure. Keep on trying!");
       } else {
         alert("Failure. Your attempts are up!");
+        if (props.attempts.length == 2) {
+          logAttempt();
+        }
+
+        props.rerenderAttemptsCallback();
         props.setStory(1);
         props.open(btnRef);
       }
@@ -54,43 +60,7 @@ const LocationButton = props => {
       }
       logSuccess();
     }
-
-    //   }
-
-    // if (this.props.coords) {
-    //   const lat = this.props.coords.latitude;
-    //   const long = this.props.coords.longitude;
-    //   const isMatch = isLocationMatch(lat, long, 42.3292336, -71.0854208);
-
-    //   if(!isMatch) {
-    //     this.logAttempt();
-    //     this.props.rerenderParentCallback();
-    //   }
-
-    //   const message = isMatch ? 'Your location is a match!' : 'Try again lol';
-    //   alert('hello!! ' + message);
-    // }
-
-    // else {
-    //   alert('No location available');
-    // }
   };
-
-  console.log("available: " + props.isGeolocationAvailable);
-  console.log("enabled: " + props.isGeolocationEnabled);
-  console.log("coord: " + props.coords);
-  if (props.coords) {
-    console.log("coord: " + props.coords.latitude);
-    console.log("coord: " + props.coords.longitude);
-  }
-
-  const isMatch = isLocationMatch(
-    42.3292356,
-    -71.0854208,
-    42.3292336,
-    -71.0854208
-  );
-  console.log("dfljklsdfj: " + isMatch);
 
   return (
     <PrimaryButton
@@ -102,10 +72,4 @@ const LocationButton = props => {
   );
 };
 
-export default geolocated({
-  positionOptions: {
-    enableHighAccuracy: false,
-  },
-  watchPosition: true,
-  userDecisionTimeout: 5000,
-})(LocationButton);
+export default LocationButton;

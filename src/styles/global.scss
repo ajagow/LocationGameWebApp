@@ -1,22 +1,18 @@
 html {
-  background-color: lavenderblush;
+  background-color: #212072;
 }
 
-
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: normal;
   font-weight: bold;
-  src:
-    local('DM Sans'),
-    url(../fonts/DMSans-Bold.woff) format('woff');
+  src: local("DM Sans"), url(../fonts/DMSans-Bold.woff) format("woff");
 }
 
 @font-face {
-  font-family: 'JetBrains Mono';
+  font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 500;
-  src:
-    local('JetBrains Mono'),
-    url(../fonts/JetBrainsMono-Regular.woff) format('woff');
+  src: local("JetBrains Mono"),
+    url(../fonts/JetBrainsMono-Regular.woff) format("woff");
 }

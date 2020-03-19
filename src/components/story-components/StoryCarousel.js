@@ -1,10 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import { useState } from "react";
-import {
-  Terrene_H1,
-  Terrene_P,
-} from "../base_components/typography";
+import { Terrene_H1, Terrene_P } from "../base_components/typography";
 import { darkBlue, cream } from "../base_components/colors";
 import Square from "../../images/Square.png";
 import { PrimaryButton } from "../base_components/buttons";
@@ -45,7 +42,9 @@ const ChapterTitle = styled(Terrene_H1)`
 `;
 
 export const StoryCarousel = props => {
-  const { story, title } = props;
+  const { story, title, isFirstTime } = props;
+
+  const imgPath = isFirstTime ? "../storyImages" : "storyImages";
 
   const [slide, setSlide] = useState(0);
 
@@ -63,14 +62,24 @@ export const StoryCarousel = props => {
     <StoryCarouselWrapper>
       <ChapterTitle>{title}</ChapterTitle>
       <StoryImageWrapper>
-        <StoryImage src={slideContent && slideContent.image !== '' ? `storyImages/${slideContent.image}` : Square} />
+        <StoryImage
+          src={
+            slideContent && slideContent.image !== ""
+              ? `${imgPath}/${slideContent.image}`
+              : Square
+          }
+        />
       </StoryImageWrapper>
       <StoryContent>
         <Terrene_P>{slideContent ? slideContent.text : ""}</Terrene_P>
       </StoryContent>
       <ButtonsWrapper>
-        {slide > 0 ? <PrimaryButton onClickFnc={() => prevSlide()} title="Prev"/> : null}
-        {slide < story.length - 1 ? <PrimaryButton onClickFnc={() => nextSlide()} title="Next"/> : null}
+        {slide > 0 ? (
+          <PrimaryButton onClickFnc={() => prevSlide()} title="Prev" />
+        ) : null}
+        {slide < story.length - 1 ? (
+          <PrimaryButton onClickFnc={() => nextSlide()} title="Next" />
+        ) : null}
       </ButtonsWrapper>
     </StoryCarouselWrapper>
   );

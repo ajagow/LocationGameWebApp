@@ -87,6 +87,7 @@ const logUser = (name, id) => {
     .catch(console.log);
 
   document.cookie = "visit=true";
+  document.cookie = "firstTime=true";
   setTimeout(function() {
     window.location.replace(`/`);
   }, 1000);

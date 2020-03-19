@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useRef } from "react";
 import { Terrene_H1 } from "../base_components/typography";
 import terrene_wordmark from "../../../public/icons/terrene_wordmark.svg";
 
@@ -33,6 +33,7 @@ const TopBar = props => {
         <LogoutStyle
           onClick={() => {
             document.cookie = "visit=false";
+            document.cookie = "firstTime=true";
             window.location.replace(`/`);
           }}
         >

@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useRef } from "react";
 
 import Draggable from "react-draggable";
+import { getCookie } from "../../utils/cookieUtils";
 
 import { TabContent, TabBar } from "./tabMenu";
 

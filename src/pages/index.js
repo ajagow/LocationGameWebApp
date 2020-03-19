@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useRef } from "react";
 import { Link, graphql } from "gatsby";
 
 import { Redirect } from "@reach/router";
@@ -27,6 +27,7 @@ import { getCookie } from "../utils/cookieUtils";
 const IndexPage = props => {
   const { open, modalProps } = useModal({
     background: darkBlue,
+    open: true,
   });
 
   const [storyId, setStoryId] = useState(0);
@@ -56,8 +57,12 @@ const IndexPage = props => {
   };
 
   const isVisited = getCookie("visit");
+  const isFirstTime = getCookie("firstTime");
+
   if (isVisited === "" || isVisited === "false") {
     window.location.replace(`/page-2`);
+  } else if (isFirstTime === "true") {
+    window.location.replace(`/story-page`);
   } else {
     return (
       <div>

@@ -3,6 +3,8 @@ import React from "react";
 
 import SwipeableViews from "react-swipeable-views";
 
+import { Input } from "antd";
+
 import {
   Terrene_H2,
   Terrene_H3,
@@ -20,10 +22,10 @@ import { ListStyle, ListTextContainerStyle } from "../List/List.js";
 import { mediumBlue, red } from "../base_components/colors";
 
 const quests = [
-  { id: 1, questName: "Finding the Dragon", clue: "clues/quest1.png" },
-  { id: 2, questName: "Hiding the Dragon", clue: "clues/quest2.png" },
-  { id: 3, questName: "Saving the Dragon", clue: "clues/quest3.png" },
-  { id: 4, questName: "Freeing the Dragon", clue: "clues/quest4.jpg" },
+  { id: 1, questName: "It's always greener", clue: "clues/quest1.png" },
+  { id: 2, questName: "Skrrt", clue: "clues/quest2.png" },
+  { id: 3, questName: "Apocalypse Plus One", clue: "clues/quest3.png" },
+  { id: 4, questName: "Would you be so lucky?", clue: "clues/quest4.png" },
 ];
 
 export const QuestListStyle = styled.a`
@@ -83,14 +85,24 @@ const Incomplete = styled(Terrene_H4)`
   color: ${red};
 `;
 
-export class QuestDetail extends React.Component {
+const StyledInput = styled(Input)`
+  height: 48px;
+  padding: 8px;
+  border: 1px solid grey;
+  border-radius: 8px 0px 0px 8px;
+`;
 
+export class QuestDetail extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      locationGuess: "",
+    };
   }
 
   render() {
     const { id } = this.props;
+    console.log(this.state.locationGuess);
     return (
       <div>
         <BackButton>
@@ -109,15 +121,19 @@ export class QuestDetail extends React.Component {
 
         <QuestListHolderStyle2>
           <Terrene_H2>{quests[parseInt(id - 1)].questName}</Terrene_H2>
+          <StyledInput
+            placeholder={"location guess"}
+            onChange={e => this.setState({ locationGuess: e.target.value })}
+          />
           <LocationButton
             id={id}
+            guess={this.state.locationGuess}
             rerenderParentCallback={this.props.rerenderParentCallback}
             open={this.props.open}
             setStory={this.props.setStory}
             attempts={this.props.attempts}
             rerenderAttemptsCallback={this.props.rerenderAttemptsCallback}
           />
-
           <ClueImage src={quests[parseInt(id - 1)].clue} />
         </QuestListHolderStyle2>
       </div>

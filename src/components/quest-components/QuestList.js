@@ -11,6 +11,7 @@ import {
 
 import LocationButton from "../base_components/LocationButton";
 import { Attempts } from "../attempts_components/attempts";
+import { VotingPreview } from "../story-components/voting-components/VotingPreview";
 
 import back from "../../../public/icons/back.svg";
 import { IconSVG, ClueImage } from "../base_components/images";
@@ -189,6 +190,10 @@ export class QuestList extends React.Component {
         <Attempts attempts={this.props.attempts} update={this.state.update} />
         {this.state.showList && (
           <QuestListHolderStyle>
+            <VotingPreview
+              setStory={this.props.setStory}
+              open={this.props.open}
+            />
             <QuestListItems
               questItems={this.props.quests}
               toggleShowList={this.toggleShowList}

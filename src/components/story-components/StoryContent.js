@@ -180,4 +180,15 @@ export const story = [
       },
     ],
   },
+  {
+    id: 2,
+    title: "Decision",
+    clue: "",
+    story: [
+      {
+        text: "decision text",
+        image: "",
+      },
+    ],
+  },
 ];

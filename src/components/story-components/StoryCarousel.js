@@ -42,7 +42,7 @@ const ChapterTitle = styled(Terrene_H1)`
 `;
 
 export const StoryCarousel = props => {
-  const { story, title, isFirstTime } = props;
+  const { story, title, id, isFirstTime } = props;
 
   const imgPath = isFirstTime ? "../storyImages" : "storyImages";
 
@@ -60,7 +60,7 @@ export const StoryCarousel = props => {
 
   return (
     <StoryCarouselWrapper>
-      <ChapterTitle>{title}</ChapterTitle>
+      <ChapterTitle>{id}</ChapterTitle>
       <StoryImageWrapper>
         <StoryImage
           src={
@@ -79,7 +79,8 @@ export const StoryCarousel = props => {
         ) : null}
         {slide < story.length - 1 ? (
           <PrimaryButton onClickFnc={() => nextSlide()} title="Next" />
-        ) : null}
+        ) :  //TODO: change check to if is deliberation TYPE of story
+          (id == 2 ? <PrimaryButton onClickFnc={() => nextSlide()} title="Vote"/> : null)}}
       </ButtonsWrapper>
     </StoryCarouselWrapper>
   );

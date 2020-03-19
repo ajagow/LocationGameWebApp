@@ -71,6 +71,7 @@ const IndexPage = props => {
           <StoryCarousel
             story={story[storyId].story}
             title={story[storyId].title}
+            id={setStoryId}
           />
         </Modal>
         <TopBar showLogout={true} />

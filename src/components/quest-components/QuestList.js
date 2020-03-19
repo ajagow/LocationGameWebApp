@@ -208,7 +208,7 @@ export class QuestList extends React.Component {
           <QuestListHolderStyle>
 
             {//TODO: change unlock condition to voted in deliberation (from mission page)
-            this.props.quests.length === 8 || this.props.attempts.length > 2 ?  
+            this.props.quests.length === 4 || this.props.attempts.length > 2 ?  
             <VotingPreview
               setStory={this.props.setStory}
               open={this.props.open}

@@ -1,10 +1,18 @@
 import styled from "styled-components";
 import React from "react";
 import { useState } from "react";
+
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
+
 import {
   Terrene_H1,
   Terrene_P,
 } from "../../base_components/typography";
+
 import { darkBlue, cream } from "../../base_components/colors";
 import Square from "../../images/Square.png";
 import { PrimaryButton } from "../../base_components/buttons";
@@ -66,6 +74,7 @@ export const StoryCarousel = props => {
 
     //Description
     //Vote List
+    <FormControlLabel control={<Checkbox name="checkedC" />} label="Uncontrolled" />
 
     //Prev Next buttons
   );

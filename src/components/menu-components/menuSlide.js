@@ -40,7 +40,6 @@ export class MenuSlide extends React.Component {
 
   state = {
     index: 0,
-    quests: [],
     attempts: [],
   };
 
@@ -53,7 +52,7 @@ export class MenuSlide extends React.Component {
     fetch(`${process.env.TERRENE_API}/quests`)
       .then(res => res.json())
       .then(data => {
-        this.setState({ quests: data });
+        this.props.setQuests(data);
       })
       .catch(console.log);
   }
@@ -129,7 +128,7 @@ export class MenuSlide extends React.Component {
                 attempts={this.state.attempts}
                 rerenderParentCallback={this.rerenderParentCallback}
                 rerenderAttemptsCallback={this.rerenderAttemptsCallback}
-                quests={this.state.quests}
+                quests={this.props.quests}
                 index={this.state.index}
                 handleChangeIndex={this.handleChangeIndex}
               />

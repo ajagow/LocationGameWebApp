@@ -9,6 +9,8 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
 import { PrimaryButton } from "../../base_components/buttons";
 
+import { ClueList } from "../../clue-components/ClueList";
+
 
 const VotingPageWrapper = styled.div``;
 
@@ -55,6 +57,7 @@ export const VotingPage = props => {
 
   return (
     <VotingPageWrapper>
+      <ClueList quests={props.quests}/>
       <form onSubmit={handleSubmit}>
       <FormControl component="fieldset" error={error}>
         <FormLabel component="legend">Time to Vote</FormLabel>

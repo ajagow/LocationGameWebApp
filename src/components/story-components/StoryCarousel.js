@@ -44,7 +44,7 @@ const ChapterTitle = styled(Terrene_H1)`
 `;
 
 export const StoryCarousel = props => {
-  const { story, title, id, setStory, isFirstTime } = props;
+  const { story, title, id, setStory, quests, isFirstTime } = props;
 
   const imgPath = isFirstTime ? "../storyImages" : "storyImages";
 
@@ -95,7 +95,7 @@ export const StoryCarousel = props => {
               (id == 1 ? <PrimaryButton onClickFnc={() => toVoting() } title="Vote"/> : null)}
           </ButtonsWrapper>
           </> :
-          <VotingPage setStory={setStory} setVoting={setVoting}/>}
+          <VotingPage setStory={setStory} setVoting={setVoting} quests={quests}/>}
           
       </>
     </StoryCarouselWrapper>

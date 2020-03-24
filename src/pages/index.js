@@ -72,6 +72,7 @@ const IndexPage = props => {
             story={story[storyId].story}
             title={story[storyId].title}
             id={storyId}
+            setStory={setStory}
           />
         </Modal>
         <TopBar showLogout={true} />

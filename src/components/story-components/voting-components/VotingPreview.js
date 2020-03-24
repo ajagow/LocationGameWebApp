@@ -69,7 +69,7 @@ export const VotingPreview = props => {
   return (
     <>
       <Terrene_H3>"All Missions Complete! Time to vote."</Terrene_H3>
-      <ListItem title={story[2].title} id="2" open={open} />
+      <ListItem title={story[1].title} id="1" open={open} />
       <VoteStatusList/>
     </>
   );

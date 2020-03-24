@@ -107,7 +107,22 @@ export const story = [
   },
   {
     id: 1,
-    title: "Epilogue",
+    title: "Deliberation",
+    clue: "",
+    story: [
+      {
+        text: "Deliberation text",
+        image: "",
+      },
+      {
+        text: "Deliberation text 2",
+        image: "",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Good Epilogue",
     clue: "",
     story: [
       {
@@ -181,16 +196,76 @@ export const story = [
     ],
   },
   {
-    id: 2,
-    title: "Deliberation",
+    id: 3,
+    title: "Bad Epilogue",
     clue: "",
     story: [
       {
-        text: "Deliberation text",
+        text: "Having closed as many of the portals as possible, the group reassembles at Quinn's apartment.",
         image: "",
       },
       {
-        text: "Deliberation text 2",
+        text: "Back at Quinn's house",
+        image: "",
+      },
+      {
+        text: "Ring Ring Ring",
+        image: "",
+      },
+      {
+        text: "Hi Alex, Sam, Jamie, and Quinn. This is Robert Lovehate. Thanks for helping me with these pesky portals. I knew you were just the people for the job.",
+        image: "",
+      },
+      {
+        text: "Where are you? How did you get this number?",
+        image: "",
+      },
+      {
+        text: "That's not important right now, something terrible is coming —",
+        image: "",
+      },
+      {
+        text: "urrrr EEEE urrr NNNGGGG CRRRRcrrrr KEEEEEEE grrr nnnnnng - all of the group's Gateway Killers go off at once.",
+        image: "",
+      },
+      {
+        text: "TERRENE PORTAL SIGNAL DETECTED. LOCATION UNKNOWN. ROGUE SIGNAL, DANGER. DANGER.",
+        image: "",
+      },
+      {
+        text: "Is that what you wanted to tell us about?",
+        image: "",
+      },
+      {
+        text: "Yes. I don't have time to explain now, but an unstable gateway is going to open up, and we can't let that happen. ",
+        image: "",
+      },
+      {
+        text: "Can we stop it?",
+        image: "",
+      },
+      {
+        text: "Yes, but have you ever heard of the uncertainty principle? There is no way for us to be certain where the gateway will open up. My projections have narrowed it down to the following four locations:",
+        image: "",
+      },
+      {
+        text: "Use information you collected from the portals you closed in order to figure out where it will open up.",
+        image: "",
+      },
+      {
+        text: "But how?",
+        image: "",
+      },
+      {
+        text: "",
+        image: "",
+      },
+      {
+        text: "He disconnected!",
+        image: "",
+      },
+      {
+        text: "We got this guys!",
         image: "",
       },
     ],

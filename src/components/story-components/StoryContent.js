@@ -189,6 +189,10 @@ export const story = [
         text: "Deliberation text",
         image: "",
       },
+      {
+        text: "Deliberation text 2",
+        image: "",
+      },
     ],
   },
 ];

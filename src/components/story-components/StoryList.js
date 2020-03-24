@@ -67,10 +67,11 @@ export const StoryList = props => {
         <ListItem title={story[0].title} open={open} id={0} />
 
         {//Unlock Deliberation if completed all quests or out of attempt 
-        //TODO: change unlock condition to voted in deliberation (from mission page)
-        quests.length === 4 || attempts.length > 2 ? <ListItem title={story[2].title} open={open} id={2} /> : null}
+        //TODO: deliberation only shows here once completed. (out of scope of prototype)
+        //quests.length === 4 || attempts.length > 2 ? <ListItem title={story[2].title} open={open} id={2} /> : null
+        }
 
-        {//TODO: Unlock Epilogue if all team finish Deliberation...
+        {//TODO: Unlock Epilogue if all team finish Deliberation... (out of scope of prototype)
          // ___ ? <ListItem title={story[1].title} open={open} id={1} /> : null
         }
       </>

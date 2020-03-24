@@ -60,7 +60,7 @@ export const StoryCarousel = props => {
 
   return (
     <StoryCarouselWrapper>
-      <ChapterTitle>{id}</ChapterTitle>
+      <ChapterTitle>{title}</ChapterTitle>
       <StoryImageWrapper>
         <StoryImage
           src={
@@ -80,7 +80,7 @@ export const StoryCarousel = props => {
         {slide < story.length - 1 ? (
           <PrimaryButton onClickFnc={() => nextSlide()} title="Next" />
         ) :  //TODO: change check to if is deliberation TYPE of story
-          (id == 2 ? <PrimaryButton onClickFnc={() => nextSlide()} title="Vote"/> : null)}}
+          (id == 2 ? <PrimaryButton onClickFnc={() => nextSlide()} title="Vote"/> : null)}
       </ButtonsWrapper>
     </StoryCarouselWrapper>
   );

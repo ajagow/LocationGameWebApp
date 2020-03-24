@@ -48,7 +48,6 @@ const LocationButton = props => {
         }
 
         props.rerenderAttemptsCallback();
-        props.setStory(1);
         props.open(btnRef);
       }
     } else {

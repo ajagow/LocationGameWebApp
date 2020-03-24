@@ -7,7 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
-import Button from '@material-ui/core/Button';
+import { PrimaryButton } from "../../base_components/buttons";
 
 
 const VotingPageWrapper = styled.div``;
@@ -32,17 +32,21 @@ export const VotingPage = props => {
     setError(false);
   };
 
+  const goBack = () => {
+    props.setVoting(false);
+  }
+
   const handleSubmit = event => {
     event.preventDefault();
 
     if (value === 'success') {
       setHelperText('');
       props.setStory(2);
-      props.setVoting(false);
+      goBack();
     } else if (value === 'fail') {
       setHelperText('');
       props.setStory(3);
-      props.setVoting(false);
+      goBack();
     } else {
       setHelperText('Please select an option.');
       setError(true);
@@ -63,8 +67,8 @@ export const VotingPage = props => {
       </FormControl>
       <FormHelperText>{helperText}</FormHelperText>
       <ButtonsWrapper>
-          {/*TODO: <PrimaryButton onClickFnc={() => props.prevSlide()} title="Prev" /> */}
-          <Button type="submit"> Cast Vote </Button>
+          <PrimaryButton onClickFnc={() => goBack()} title="Prev" />
+          <button type="submit"> <PrimaryButton onClickFnc={() => {}} title="Cast Vote"></PrimaryButton></button>
       </ButtonsWrapper>
       </form>
     </VotingPageWrapper>

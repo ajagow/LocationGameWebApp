@@ -95,7 +95,8 @@ export const StoryCarousel = props => {
               (id == 2 ? <PrimaryButton onClickFnc={() => toVoting() } title="Vote"/> : null)}
           </ButtonsWrapper>
           </> :
-          <VotingPage/> }
+          <VotingPage/>}
+          
       </>
     </StoryCarouselWrapper>
   );

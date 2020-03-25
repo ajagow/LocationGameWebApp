@@ -30,13 +30,10 @@ const IndexPage = props => {
     open: true,
   });
 
-  state = {
-    quests: [],
-  };
-
-  const [storyId, setStoryId] = useState(0);
+  const [quests, setQuestsState] = useState([]);
 
   const { coords } = props;
+  const [storyId, setStoryId] = useState(0);
   // constructor(props) {
   //   super(props);
   //   this.onClickButton = this.onClickButton.bind(this);
@@ -55,8 +52,8 @@ const IndexPage = props => {
     }
   };
   const setQuests = data => {
-    this.setState({ quests: data })
-  }
+    setQuestsState(data);
+  };
   const setStory = id => {
     setStoryId(id);
     console.log(`setting story id to ${id}`);
@@ -79,11 +76,16 @@ const IndexPage = props => {
             title={story[storyId].title}
             id={storyId}
             setStory={setStory}
-            quests={this.state.quests}
+            quests={quests}
           />
         </Modal>
         <TopBar showLogout={true} />
-        <MenuSlide open={open} setStory={setStory} quests={this.state.quests} setQuests={setQuests} />
+        <MenuSlide
+          open={open}
+          setStory={setStory}
+          quests={quests}
+          setQuests={setQuests}
+        />
         <MapContainer lat={42.3287342} long={-71.0854208} />
       </div>
     );

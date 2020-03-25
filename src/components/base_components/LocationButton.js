@@ -32,8 +32,6 @@ const LocationButton = props => {
   };
 
   const onClickButton = () => {
-
-
     if (!isLocationMatch(props.id, props.guess)) {
       if (props.attempts.length < 2) {
         console.log(props.attempts.length);
@@ -48,12 +46,12 @@ const LocationButton = props => {
         }
 
         props.rerenderAttemptsCallback();
-        props.open(btnRef);
+        // props.open(btnRef);
       }
     } else {
       props.rerenderParentCallback(true);
       alert("Success! Go to the clue menu to see the clue you unlocked!");
-      if (props.quests.length <= 7) {
+      if (props.quests.length >= 7) {
         props.setStory(1);
         props.open(btnRef);
       }

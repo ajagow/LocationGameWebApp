@@ -33,6 +33,14 @@ const answers = {
   ],
   3: ["fivehorsestavern", "tavern", "fivehorses"],
   4: ["7-eleven", "7/11", "seveneleven", "seven-eleven", "seven-eleven"],
+  5: ["harriettubman", "harriettubmansquare", "harriettubmanmonument"],
+  6: [
+    "underarmourbrandhouse",
+    "underarmour",
+    "underarmourbust",
+    "underarmourstore",
+  ],
+  7: ["braddock", "braddockpark"],
 };
 
 export const isLocationMatch = (id, guess) => {

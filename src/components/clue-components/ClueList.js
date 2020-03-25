@@ -16,6 +16,9 @@ const clues = [
   { id: 2, questName: "Mass Ave T Stop", clue: "hints/north.png" },
   { id: 3, questName: "Five Horses Tavern", clue: "hints/north.png" },
   { id: 4, questName: "7-Eleven", clue: "hints/north.png" },
+  { id: 5, questName: "Harriet Tubman Square", clue: "hints/north.png" },
+  { id: 6, questName: "Under Armour Brand House", clue: "hints/south.png" },
+  { id: 7, questName: "Braddock Park", clue: "hints/west.png" },
 ];
 
 const empty = "hints/lock.svg";

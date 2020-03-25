@@ -27,6 +27,9 @@ const quests = [
   { id: 2, questName: "Skrrt", clue: "clues/quest2.png" },
   { id: 3, questName: "Apocalypse Plus One", clue: "clues/quest3.png" },
   { id: 4, questName: "Would you be so lucky?", clue: "clues/quest4.png" },
+  { id: 5, questName: "Choo choo", clue: "clues/quest5.png" },
+  { id: 6, questName: "All hail the queen", clue: "clues/quest6.png" },
+  { id: 7, questName: "The British are coming!", clue: "clues/quest7.png" },
 ];
 
 export const QuestListStyle = styled.a`
@@ -206,13 +209,13 @@ export class QuestList extends React.Component {
         <Attempts attempts={this.props.attempts} update={this.state.update} />
         {this.state.showList && (
           <QuestListHolderStyle>
-
             {//TODO: change unlock condition to voted in deliberation (from mission page)
-            this.props.quests.length === 4 || this.props.attempts.length > 2 ?  
-            <VotingPreview
-              setStory={this.props.setStory}
-              open={this.props.open}
-            /> : null}
+            this.props.quests.length === 7 || this.props.attempts.length > 2 ? (
+              <VotingPreview
+                setStory={this.props.setStory}
+                open={this.props.open}
+              />
+            ) : null}
 
             <QuestListItems
               questItems={this.props.quests}

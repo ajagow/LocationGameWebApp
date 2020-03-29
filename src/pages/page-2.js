@@ -78,7 +78,7 @@ const StyledInput = styled(Input)`
 `;
 
 const logUser = (name, id) => {
-  let apiCall = `${process.env.TERRENE_API}/users/` + id + "/" + name;
+  let apiCall = `http://45.77.222.45:3000/users/` + id + "/" + name;
   fetch(apiCall)
     .then(res => res.json())
     .then(data => {

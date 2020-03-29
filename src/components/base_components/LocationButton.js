@@ -13,7 +13,7 @@ const LocationButton = props => {
   const btnRef = useRef(null);
 
   const logAttempt = () => {
-    fetch(`${process.env.TERRENE_API}/attempts/1/2`)
+    fetch(`http://45.77.222.45:3000/attempts/1/2`)
       .then(res => res.json())
       .then(data => {
         setQuests(data);
@@ -23,7 +23,7 @@ const LocationButton = props => {
 
   const logSuccess = () => {
     const { id } = props;
-    fetch(`${process.env.TERRENE_API}/quests/1/` + id)
+    fetch(`http://45.77.222.45:3000/quests/1/` + id)
       .then(res => res.json())
       .then(data => {
         setQuests(data);

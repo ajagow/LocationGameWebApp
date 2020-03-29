@@ -41,7 +41,7 @@ export class TeamList extends React.Component {
   }
 
   componentDidMount() {
-        fetch(`${process.env.TERRENE_API}/quests`)
+        fetch(`http://45.77.222.45:3000/quests`)
         .then(res => res.json())
         .then((data) => {
             this.setState({ quests: data });

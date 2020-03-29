@@ -49,7 +49,7 @@ export class MenuSlide extends React.Component {
   }
 
   fetchQuests() {
-    fetch(`${process.env.TERRENE_API}/quests`)
+    fetch(`http://45.77.222.45:3000/quests`)
       .then(res => res.json())
       .then(data => {
         this.props.setQuests(data);
@@ -58,7 +58,7 @@ export class MenuSlide extends React.Component {
   }
 
   fetchAttempts() {
-    fetch(`${process.env.TERRENE_API}/attempts`)
+    fetch(`http://45.77.222.45:3000/attempts`)
       .then(res => res.json())
       .then(data => {
         this.setState({ attempts: data });

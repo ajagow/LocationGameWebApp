@@ -73,7 +73,7 @@ const IndexPage = props => {
     return (
       <div>
       <Helmet>
-        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+      <meta http-equiv="Access-Control-Allow-Origin" content="*"/>
       </Helmet>
         <SEO title="Home" />
         <Modal {...modalProps} padding={false}>

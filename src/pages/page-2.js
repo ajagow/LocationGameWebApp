@@ -79,7 +79,7 @@ const StyledInput = styled(Input)`
 
 const logUser = (name, id) => {
   let apiCall = `http://45.77.222.45:3000/users/` + id + "/" + name;
-  fetch(apiCall)
+  fetch(apiCall, {mode: "no-cors"})
     .then(res => res.json())
     .then(data => {
       console.log(data);

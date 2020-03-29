@@ -41,7 +41,7 @@ export class TeamList extends React.Component {
   }
 
   componentDidMount() {
-        fetch(`http://45.77.222.45:3000/quests`)
+        fetch(`http://45.77.222.45:3000/quests`, {mode: "no-cors"})
         .then(res => res.json())
         .then((data) => {
             this.setState({ quests: data });

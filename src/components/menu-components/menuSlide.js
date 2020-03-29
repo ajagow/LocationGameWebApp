@@ -51,11 +51,9 @@ export class MenuSlide extends React.Component {
   fetchQuests() {
     fetch(`http://45.77.222.45:3000/quests`)
       .then(res => {
-        console.log(res); 
         res.json();
       })
       .then(data => {
-        console.log('here: ' + data.length);
         this.props.setQuests(data);
       })
       .catch(console.log);

@@ -59,8 +59,9 @@ export const TP = styled(Terrene_P)`
 
 const StoryPage = props => {
   const [storyId, setStoryId] = useState(0);
-
-  document.cookie = "firstTime=false";
+  if (typeof window !== `undefined`) {
+    document.cookie = "firstTime=false";
+  }
 
   return (
     <Container>

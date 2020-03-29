@@ -32,9 +32,11 @@ const TopBar = props => {
       <TopBarStyle>
         <LogoutStyle
           onClick={() => {
-            document.cookie = "visit=false";
-            document.cookie = "firstTime=true";
-            window.location.replace(`/`);
+            if (typeof window !== `undefined`) {
+              document.cookie = "visit=false";
+              document.cookie = "firstTime=true";
+              window.location.replace(`/`);
+            }
           }}
         >
           logout

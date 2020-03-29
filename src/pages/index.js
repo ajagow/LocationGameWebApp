@@ -59,8 +59,9 @@ const IndexPage = props => {
     console.log(`setting story id to ${id}`);
   };
 
-  const isVisited = getCookie("visit");
-  const isFirstTime = getCookie("firstTime");
+  const isVisited = typeof window !== `undefined` ? getCookie("visit") : "true";
+  const isFirstTime =
+    typeof window !== `undefined` ? getCookie("firstTime") : "false";
 
   if (isVisited === "" || isVisited === "false") {
     window.location.replace(`/page-2`);

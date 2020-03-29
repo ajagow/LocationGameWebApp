@@ -85,12 +85,13 @@ const logUser = (name, id) => {
       console.log(data);
     })
     .catch(console.log);
-
-  document.cookie = "visit=true";
-  document.cookie = "firstTime=true";
-  setTimeout(function() {
-    window.location.replace(`/`);
-  }, 1000);
+  if (typeof window !== `undefined`) {
+    document.cookie = "visit=true";
+    document.cookie = "firstTime=true";
+    setTimeout(function() {
+      window.location.replace(`/`);
+    }, 1000);
+  }
 };
 
 const SecondPage = () => {

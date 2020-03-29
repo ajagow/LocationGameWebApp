@@ -60,7 +60,7 @@ export const TP = styled(Terrene_P)`
 const StoryPage = props => {
   const [storyId, setStoryId] = useState(0);
   if (typeof window !== `undefined`) {
-    document.cookie = "firstTime=false";
+    document.cookie = "firstTime=false"+"; path=/";
   }
 
   return (

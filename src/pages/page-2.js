@@ -85,9 +85,11 @@ const logUser = (name, id) => {
       console.log(data);
     })
     .catch(console.log);
-  if (typeof window !== `undefined`) {
-    document.cookie = "visit=true";
-    document.cookie = "firstTime=true";
+
+  
+  if (typeof window !== 'undefined') {
+    document.cookie = "visit=true"+"; path=/";
+    document.cookie = "firstTime=true"+"; path=/";
     setTimeout(function() {
       window.location.replace(`/`);
     }, 1000);

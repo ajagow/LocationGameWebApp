@@ -60,9 +60,10 @@ const IndexPage = props => {
   };
 
   const isVisited = typeof window !== `undefined` ? getCookie("visit") : "true";
-  const isFirstTime =
-    typeof window !== `undefined` ? getCookie("firstTime") : "false";
+  const isFirstTime = typeof window !== `undefined` ? getCookie("firstTime") : "false";
 
+
+  console.log("isvisited: " + isVisited + "    first: " + isFirstTime + "  dkjf: " + typeof window)
   if (isVisited === "" || isVisited === "false") {
     window.location.replace(`/page-2`);
   } else if (isFirstTime === "true") {

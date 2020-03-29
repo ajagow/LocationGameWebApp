@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby";
 
 import { Redirect } from "@reach/router";
 
+import { Helmet } from "react-helmet"
 import Layout from "../components/layout";
 import Image from "../components/image";
 import SEO from "../components/seo";
@@ -71,6 +72,9 @@ const IndexPage = props => {
   } else {
     return (
       <div>
+      <Helmet>
+        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
+      </Helmet>
         <SEO title="Home" />
         <Modal {...modalProps} padding={false}>
           <StoryCarousel

@@ -23,7 +23,7 @@ const LocationButton = props => {
 
   const logSuccess = () => {
     const { id } = props;
-    fetch(`http://45.77.222.45:3000/quests/1/` + id) 
+    fetch(`http://45.77.222.45:3000/quests/1/` + id)
       .then(res => res.json())
       .then(data => {
         setQuests(data);
@@ -41,6 +41,8 @@ const LocationButton = props => {
         alert("Failure. Keep on trying!");
       } else {
         alert("Failure. Your attempts are up!");
+        props.setStory(1);
+        props.open(btnRef);
         if (props.attempts.length == 2) {
           logAttempt();
         }

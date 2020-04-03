@@ -68,22 +68,22 @@ export const VotingPage = props => {
             <FormControlLabel
               value="fail"
               control={<Radio />}
-              label="Option 1 Fail"
-            />
-            <FormControlLabel
-              value="success"
-              control={<Radio />}
-              label="Option 2 Success"
+              label="Symphony Hall"
             />
             <FormControlLabel
               value="fail2"
               control={<Radio />}
-              label="Option 3 Fail"
+              label="Hynes Convention Center"
+            />
+            <FormControlLabel
+              value="success"
+              control={<Radio />}
+              label="Cheesecake Factory"
             />
             <FormControlLabel
               value="fail3"
               control={<Radio />}
-              label="Option 4 Fail"
+              label="Boston Public Library"
             />
           </RadioGroup>
         </FormControl>

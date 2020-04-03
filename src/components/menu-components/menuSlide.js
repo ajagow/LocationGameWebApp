@@ -39,7 +39,7 @@ export class MenuSlide extends React.Component {
   }
 
   state = {
-    index: 0,
+    index: 1,
     attempts: [],
   };
 
@@ -104,7 +104,7 @@ export class MenuSlide extends React.Component {
           axis="y"
           bounds={{ top: -500, bottom: 0 }}
           handle=".handle"
-          defaultPosition={{ x: 0, y: 0 }}
+          defaultPosition={{ x: 0, y: -500 }}
           position={null}
           grid={[25, 25]}
           scale={1}

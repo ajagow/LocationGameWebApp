@@ -33,7 +33,7 @@ const LocationButton = props => {
 
   const onClickButton = () => {
     if (!isLocationMatch(props.id, props.guess)) {
-      if (props.attempts.length < 2) {
+      if (props.attempts.length < 3) {
         console.log(props.attempts.length);
         logAttempt();
         props.rerenderAttemptsCallback();
@@ -43,7 +43,7 @@ const LocationButton = props => {
         alert("Failure. Your attempts are up!");
         props.setStory(1);
         props.open(btnRef);
-        if (props.attempts.length == 2) {
+        if (props.attempts.length == 3) {
           logAttempt();
         }
 

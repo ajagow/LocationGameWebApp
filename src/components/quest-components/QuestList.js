@@ -23,13 +23,13 @@ import { ListStyle, ListTextContainerStyle } from "../List/List.js";
 import { mediumBlue, red } from "../base_components/colors";
 
 const quests = [
-  { id: 1, questName: "It's always greener", clue: "clues/quest1.png" },
-  { id: 2, questName: "Skrrt", clue: "clues/quest2.png" },
+  { id: 1, questName: "Take a Walk", clue: "clues/quest1.png" },
+  { id: 2, questName: "The Commonwealth", clue: "clues/quest2.png" },
   { id: 3, questName: "Apocalypse Plus One", clue: "clues/quest3.png" },
-  { id: 4, questName: "Would you be so lucky?", clue: "clues/quest4.png" },
+  { id: 4, questName: "Hours of Operation", clue: "clues/quest4.png" },
   { id: 5, questName: "Choo choo", clue: "clues/quest5.png" },
-  { id: 6, questName: "All hail the queen", clue: "clues/quest6.png" },
-  { id: 7, questName: "The British are coming!", clue: "clues/quest7.png" },
+  { id: 6, questName: "Don't Forget the U", clue: "clues/quest6.png" },
+  { id: 7, questName: "Rhymes with Haddock", clue: "clues/quest7.png" },
 ];
 
 export const QuestListStyle = styled.a`

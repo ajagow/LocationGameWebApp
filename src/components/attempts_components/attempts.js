@@ -55,7 +55,7 @@ export class Attempts extends React.Component {
     let ans = [];
     const numAttempts =
       this.props.attempts.length > 0 ? this.props.attempts.length : 0;
-    const attemptsLeft = 3 - numAttempts;
+    const attemptsLeft = 4 - numAttempts;
 
     for (let i = 0; i < numAttempts; i++) {
       ans.push(<AttemptFilled />);
@@ -70,7 +70,7 @@ export class Attempts extends React.Component {
   render() {
     const { update } = this.props;
     const num_attempts = this.props.attempts.length;
-    const attempts_left = 3 - num_attempts;
+    const attempts_left = 4 - num_attempts;
     const message =
       attempts_left > 1 || attempts_left === 0
         ? attempts_left + " guesses left"

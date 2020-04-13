@@ -6,7 +6,7 @@ export const story = [
     story: [
       {
         text: "It was a quiet night in Franklin County, MA...",
-        image: "",
+        image: "prologue_2.png",
       },
       {
         text:
@@ -25,16 +25,16 @@ export const story = [
       {
         text:
           'Mr. Lovehate has been famous in the area for his recurring column in The Franklin Record called, "Encounters with the Beyond"',
-        image: "",
+        image: "prologue_4.png",
       },
       {
         text:
           "If you have any information regarding his whereabouts, please call the number below:",
-        image: "",
+        image: "prologue_4.png",
       },
       {
         text: "After the break, an update on the corn field vandalism.",
-        image: "",
+        image: "prologue_4.png",
       },
       {
         text: "",
@@ -47,11 +47,11 @@ export const story = [
       {
         text:
           "What's that? Is someone dropping off a package this late at night?",
-        image: "",
+        image: "alex.png",
       },
       {
         text: "Maybe. I haven't ordered anything recently, but I'll go check.",
-        image: "",
+        image: "quinn.png",
       },
       {
         text: "",
@@ -59,7 +59,7 @@ export const story = [
       },
       {
         text: "What is it?",
-        image: "",
+        image: "jamie.png",
       },
       {
         text: "",
@@ -72,7 +72,7 @@ export const story = [
       {
         text:
           "This is from the guy who was just reported missing on the news! It says there are portals to other worlds opening up and he wants us to close them... he also gave us this device - 'Gateway Killer 2.0?",
-        image: "",
+        image: "quinn.png",
       },
       {
         text: "Wow look at these things!",
@@ -80,26 +80,26 @@ export const story = [
       },
       {
         text: "Let’s go! I’ve always wanted to see a portal!",
-        image: "",
+        image: "alex.png",
       },
       {
         text:
           "I’m skeptical that these portals really exist - but if they do, we should be careful. I’ve heard wormholes can collapse within seconds.",
-        image: "",
+        image: "sam.png",
       },
       {
         text: "Don’t be a baby - this is our one chance to see a portal!",
-        image: "",
+        image: "alex.png",
       },
       {
         text:
           "Stop arguing, you two - we have a chance to save the world here. We need to be in this together. Plus, I wanted to get some snacks anyway.",
-        image: "",
+        image: "jamie.png",
       },
       {
         text:
           "Jamie is right. The professor said that we need two Gateway Killers to destroy a portal. Let’s split up - Jamie and Alex will go to 4 portals, and Sam and I will go to the other 4.",
-        image: "",
+        image: "quinn.png",
       },
       {
         text: "Check your quest list to see your quests!",

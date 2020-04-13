@@ -54,11 +54,13 @@ export const VotingPage = props => {
   };
 
   return (
-    <VotingPageWrapper>
+    <VotingPageWrapper style={{ color: "white" }}>
       <ClueList quests={props.quests} />
       <form onSubmit={handleSubmit}>
         <FormControl component="fieldset" error={error}>
-          <FormLabel component="legend">Time to Vote</FormLabel>
+          <FormLabel component="legend" style={{ color: "white" }}>
+            Time to Vote
+          </FormLabel>
           <RadioGroup
             aria-label="gender"
             name="gender1"

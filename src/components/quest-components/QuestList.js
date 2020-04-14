@@ -219,7 +219,7 @@ export class QuestList extends React.Component {
 
             {//TODO: change unlock condition to voted in deliberation (from mission page)
             this.props.quests.length === 7 ||
-            this.props.attempts.length > 2 ? null : (
+            this.props.attempts.length > 3 ? null : (
               <QuestListItems
                 questItems={this.props.quests}
                 toggleShowList={this.toggleShowList}
